@@ -1,3 +1,10 @@
 # Enhancing-Recurrent-Neural-Networks-For-Stock-Market-Forecasts-through-PEC-W-Framework
 PEC-W preprocessing with RNNs for stock prediction:
 This paper addresses challenges in time series forecasting using Long Short- Term Memory (LSTM) and Gated Recurrent Unit (GRU) networks, commonly employed in stock market forecasting, such as overfitting and extended learning times. To mitigate these issues, the PEC-W preprocessing framework, adapted from Convolutional Neural Networks (CNN), is applied to enhance forecasting accuracy without altering model parameters. This approach incorporates normalization and data augmentation to prevent overfitting, and utilizes Discrete Wavelet Transform (DWT) to reduce learning times while preserving temporal characteristics. Aggregation through averaging and mean subtraction further improves data visibility and model accuracy. The effectiveness of the PEC-W technique is validated using Explainable Artificial Intelligence (XAI) method, such as SHAP, which confirm the robustness of the enhanced forecasting approach.
+
+In our contribution to the literature, we integrate the PEC-W preprocessing framework of Kulaglic et al. [1] with Recurrent Neural Networks (RNNs). Our work addresses the following key aspects:
+1) The PEC-W preprocessing framework, initially developed for Convolutional Neural Networks (CNNs), is adapted for Recurrent Neural Networks (RNNs) to enhance performance while maintaining existing model parameters.
+2) To address overfitting, we implement normalization and data augmentation techniques during preprocessing, which preserve critical temporal features.
+3) We employ Discrete Wavelet Transform (DWT) to reduce extended learning times, ensuring that temporal characteristics are preserved.
+4) The aggregation of windows through averaging improves the visibility of seasonal and trend features, which enhances the accuracy of the model training.
+5) We utilize Explainable Artificial Intelligence (XAI) methods, specifically LIME and SHAP, to validate and demonstrate the effectiveness of the PEC-W preprocessing techniques.
