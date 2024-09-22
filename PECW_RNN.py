@@ -167,7 +167,7 @@ plt.xlabel('Index')
 plt.ylabel('Values')
 plt.gca().xaxis.set_major_locator(mdates.MonthLocator(interval=3))  # Show tick marks for every 3 months
 plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%b %Y'))  # Format x-axis labels as 'Jan 2023', 'Feb 2023', etc.
-plt.title('SPY Stock Price Prediction')
+plt.title('APPLE Stock Price Prediction')
 plt.legend()
 plt.show()
 end_time = time.time()
