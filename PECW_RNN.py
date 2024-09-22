@@ -69,7 +69,7 @@ def create_groups(dataset, window_size_2, window_size_3, timeslice_2, timeslice_
             current_slice = dataset[index + j:index + j + window_size_2]
             if not np.isnan(current_slice).all():
                 t2.extend(current_slice)
-            j += window_size_2i
+            j += window_size_2
         t3 = np.array(t3).reshape(-1, 1)
         t2 = np.array(t2).reshape(1, -1)
         t3 = np.transpose(t3)
@@ -129,7 +129,7 @@ X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1], 1))
 model = keras.Sequential()
 model.add(keras.layers.LSTM(units=64, return_sequences=True, input_shape=(X_train.shape[1], 1)))
 model.add(keras.layers.Dropout(0.2))
-model.add(keras.layers.LSTM(units=32, return_sequences=True))
+model.add(keras.layers.LSTM(units=32, return_sequences=False))
 model.add(keras.layers.Dropout(0.2))
 model.add(keras.layers.Dense(units=1))
 model.compile(optimizer='adam', loss='mean_squared_error')
