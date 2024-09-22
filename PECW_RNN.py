@@ -14,6 +14,7 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, LSTM, Dropout
 from keras.layers import LSTM, Dropout, Dense
+from tensorflow.keras.callbacks import EarlyStopping
 start_time = time.time()
 np.random.seed(42)
 tf.random.set_seed(42)
@@ -127,13 +128,13 @@ X_train = np.reshape(X_train, (X_train.shape[0], X_train.shape[1], 1))
 X_validation = np.reshape(X_validation, (X_validation.shape[0], X_validation.shape[1], 1))
 X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1], 1))
 model = keras.Sequential()
-model.add(keras.layers.LSTM(units=64, return_sequences=True, input_shape=(X_train.shape[1], 1)))
+model.add(keras.layers.LSTM(units=128, return_sequences=True, input_shape=(X_train.shape[1], 1)))
 model.add(keras.layers.Dropout(0.2))
-model.add(keras.layers.LSTM(units=32, return_sequences=False))
-model.add(keras.layers.Dropout(0.2))
+model.add(keras.layers.LSTM(units=64, return_sequences=True))
 model.add(keras.layers.Dense(units=1))
 model.compile(optimizer='adam', loss='mean_squared_error')
-history = model.fit(X_train, y_train, epochs=200, batch_size=32, validation_data=(X_validation, y_validation))
+early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
+history = model.fit(X_train, y_train, epochs=200, batch_size=64, validation_data=(X_validation, y_validation), callbacks=[early_stopping])
 y_test = y_test.reshape(-1, 1)
 predicted_stock_price = model.predict(X_test)
 k=np.array(k)
