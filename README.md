@@ -8,3 +8,4 @@ In our contribution to the literature, we integrate the PEC-W preprocessing fram
 3) We employ Discrete Wavelet Transform (DWT) to reduce extended learning times, ensuring that temporal characteristics are preserved.
 4) The aggregation of windows through averaging improves the visibility of seasonal and trend features, which enhances the accuracy of the model training.
 5) We utilize Explainable Artificial Intelligence (XAI) methods, specifically LIME and SHAP, to validate and demonstrate the effectiveness of the PEC-W preprocessing techniques.
+[![DOI](https://zenodo.org/badge/858673386.svg)](https://doi.org/10.5281/zenodo.15079527)
